@@ -1,0 +1,29 @@
+﻿@model IEnumerable<SinhVien>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<meta charset="utf-8" />
+<h1>Danh sách sinh viên thuộc khoa CNTT và có tuổi từ 18 đến 20 - Db First</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Tên</th>
+            <th>Tuổi</th>
+            <th>Lớp</th>
+            <th>Khoa</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var sinhVien in Model)
+        {
+            <tr>
+                <td>@sinhVien.Ten</td>
+                <td>@sinhVien.Tuoi</td>
+                <td>@sinhVien.Lop.Ten</td>
+                <td>@sinhVien.Lop.Khoa.Ten</td>
+            </tr>
+        }
+    </tbody>
+</table>
